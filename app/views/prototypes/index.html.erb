@@ -1,0 +1,17 @@
+<main class="main">
+  <div class="inner">
+    <%# ログインしているときは以下を表示する %>
+    <% if user_signed_in? #ユーザーがログインしている場合trueを返す %>
+      <div class="greeting">
+        こんにちは、
+        <%= link_to "#{current_user.name}さん", user_path(current_user), class: :greeting__link%>
+        <%# ログインしているユーザー名を表示 %>
+      </div>
+    <% end %>
+    <%# // ログインしているときは上記を表示 %>
+    <div class="card__wrapper">
+      <%= render partial: 'prototype', collection: @prototypes %>
+      <%# _prototype.html.erbを部分テンプレートとして呼び出し,@prototype内の要素の数だけ部分テンプレートを繰り返し表示 %>
+    </div>
+  </div>
+</main>

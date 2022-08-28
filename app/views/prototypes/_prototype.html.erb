@@ -1,0 +1,14 @@
+<div class="card">
+  <%= link_to image_tag(prototype.image, class: :card__img ), prototype_path(prototype) %>
+  <%# prototypeモデルのimageを呼び出す %>
+  <div class="card__body">
+    <%= link_to prototype.title, prototype_path(prototype), class: :card__title%>
+    <%#prototypeモデルのtitleを呼び出す %>
+    <p class="card__summary">
+      <%= prototype.catch_copy %>
+      <%# prototypeモデルのcatchを呼び出す %>
+    </p>
+    <%= link_to "by #{prototype.user.name}", user_path(prototype.user), class: :card__user %>
+    <%# prototypeモデルに関連するuserモデルのnameを呼び出す%>
+  </div>
+</div>
